@@ -6,8 +6,16 @@ function ArrayList(){
      }
      dataElements.splice(index,1);
    }
-   this.add=function(newElement){
-     dataElements[dataElements.length]=newElement;
+   this.add=function(index,item){
+     if(arguments.length==2){
+       dataElements.splice(index, 0, item);
+     }else if(arguments.length==1){
+        item=index;
+        dataElements[dataElements.length]=item;
+     }else{
+       throw "InvalidParameterException:add";
+     }
+
    }
    this.get=function(index){
       if(index<0 || index>=dataElements.length){
