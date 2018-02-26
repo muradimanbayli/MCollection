@@ -7,12 +7,32 @@ Created by Murad Imanbayli(www.imanbayli.net)
 Below is a quick example how to use ArrayList type:
 
 ```js
-var names = new ArrayList();
+var names=new ArrayList();
 names.add("Murad Imanbayli");
-names.add(0,"Ilkin Abdullayev");
+
 console.log(names.size());
+names.add(0,"Ilkin Abudllayev");
+
 console.log(names.isEmpty());
+
+var names2=new ArrayList();
+names2.add("Ehtiram Abdullayev");
+
+names.addAll(names2);
+console.log(names.toString());
+
 console.log(names.get(0));
+
+names.set(0,"Farid Mammadov");
+
+console.log(names.toArray());
+
+console.log(names.contains("Ehtiram Abdullayev"));
+
+names.removeAll(names2)
+
+console.log(names.subList(0,2).toString());
+names.clear();
 ```
 Below is a quick example how to use Map type:
 
