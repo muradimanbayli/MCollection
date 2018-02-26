@@ -80,13 +80,22 @@ function ArrayList(){
      throw "Unsupported"
    }
    this.removeAll=function(collection){
-     throw "Unsupported"
+     for (var i = 0; i < collection.size(); i++) {
+        this.remove(collection.get(i));
+     }
    }
    this.sort=function(comparator){
      throw "Unsupported"
    }
    this.subList=function(fromIndex,toIndex){
-     throw "Unsupported"
+     if(toIndex>this.size() || fromIndex<0){
+       throw "ArrayIndexOutOfBoundsException";
+     }
+     var list=new ArrayList();
+     for (var i = fromIndex; i < toIndex; i++) {
+         list.add(this.get(i));
+     }
+     return list;
    }
 }
 function Map(){
