@@ -80,6 +80,17 @@ while(iter.hasNext()){
 for(var i=0;i<names.size();i++){
   console.log(names.get(i));
 }
+
+var countries=new Set();
+countries.add("Azerbaijan");
+countries.add("Turkey");
+countries.add("Hungary");
+countries.add("Hungary");
+
+var iter=countries.iterator();
+while(iter.hasNext()){
+  console.log(iter.next());
+}
 ```
 
 
