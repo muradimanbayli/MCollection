@@ -1,3 +1,15 @@
+function Iterator(array){
+    var data=array;
+    var size=0;
+
+    this.hasNext=function(){
+        return size<data.length;
+    }
+    this.next=function(){
+      return data[size++];
+    }
+}
+
 function ArrayList(){
    var dataElements=[];
    var removeByIndex=function(index){
@@ -97,6 +109,9 @@ function ArrayList(){
      }
      return list;
    }
+   this.iterator=function(){
+     return new Iterator(this.toArray());
+   }
 }
 function Map(){
   var dataElements={};
@@ -162,5 +177,91 @@ function Map(){
   }
   this.values=function(){
     return Object.values(dataElements);
+  }
+}
+
+function Set(){
+  var dataElements=[];
+  this.add=function(item){
+    if(!this.contains(item)){
+      dataElements[dataElements.length]=item;
+      return true;
+    }else{
+      return false;
+    }
+  }
+  this.addAll=function(collection){
+    if(collection instanceof Set){
+      var iter=collection.iterator();
+        while(iter.hasNext()){
+          var item=iter.next();
+          this.add(item);
+        }
+    }
+  }
+  this.clear=function(){
+    dataElements=[];
+    return true;
+  }
+  this.contains=function(item){
+    return dataElements.indexOf(item)>-1;
+  }
+  this.containsAll=function(collection){
+    if(collection instanceof Set){
+      var iter=collection.iterator();
+        while(iter.hasNext()){
+          var item=iter.next();
+          if(!this.contains(item)){;
+            return false;
+          }
+        }
+        return true;
+    }else{
+      return false;
+    }
+  }
+  this.equals=function(collection){
+    if(collection instanceof Set){
+      if(this.size()!=collection.size()){
+        return false;
+      }
+      var iter=collection.iterator();
+        while(iter.hasNext()){
+          var item=iter.next();
+          if(!this.contains(item)){
+            return false;
+          }
+        }
+        return true;
+    }else{
+      return false;
+    }
+  }
+  this.iterator=function(){
+    return new Iterator(dataElements);
+  }
+  this.isEmpty=function(){
+    return dataElements.length==0;
+  }
+  this.size=function(){
+    return dataElements.length;
+  }
+  this.remove=function(item){
+    if(this.contains(item)){
+      var objectIndex=dataElements.indexOf(item);
+      dataElements.splice(objectIndex,1);
+    }
+  }
+  this.removeAll=function(collection){
+    if(collection instanceof Set){
+      var iter=collection.iterator();
+      while(iter.hasNext()){
+        var item=iter.next();
+        this.remove(item);
+      }
+    }
+  }
+  this.toArray=function(){
+    return dataElements;
   }
 }
