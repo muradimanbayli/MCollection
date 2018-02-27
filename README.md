@@ -64,6 +64,34 @@ console.log(tempMap.keySet());
 tempMap2.putAll(tempMap2);
 console.log(tempMap.values());
 ```
+Below is a quick example how to use Set type:
+```js
+var countries=new Set();
+countries.add("Azerbaijan");
+countries.add("Turkey");
+
+var countries2=new Set();
+countries2.add("Hungary");
+countries2.add("Hungary");
+
+countries.addAll(countries2);
+countries2.add("Hungary2");
+
+//countries.clear();
+console.log(countries.toArray().toString());
+console.log(countries.contains("Turkey"));
+
+console.log(countries.containsAll(countries2));
+
+console.log(countries.size());
+console.log(countries.isEmpty());
+
+//console.log(countries.remove("Turkey"));
+
+//console.log(countries.removeAll(countries2));
+console.log(countries.toArray().toString());
+```
+
 You can use for loop and Iterator
 
 ```js
