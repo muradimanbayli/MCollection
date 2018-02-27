@@ -64,4 +64,23 @@ console.log(tempMap.keySet());
 tempMap2.putAll(tempMap2);
 console.log(tempMap.values());
 ```
+You can use for loop and Iterator
+
+```js
+var names=new ArrayList();
+names.add("Murad Imanbayli");
+names.add("Ilkin Abudllayev");
+names.add("Ehtiram Abdullayev");
+
+var iter=names.iterator();
+while(iter.hasNext()){
+  console.log(iter.next());
+}
+
+for(var i=0;i<names.size();i++){
+  console.log(names.get(i));
+}
+```
+
+
 
