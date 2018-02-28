@@ -11,7 +11,7 @@ var names=new ArrayList();
 names.add("Murad Imanbayli");
 
 console.log(names.size());
-names.add(0,"Ilkin Abudllayev");
+names.add(0,"Ilkin Abdullayev");
 
 console.log(names.isEmpty());
 
@@ -97,7 +97,7 @@ You can use for loop and Iterator
 ```js
 var names=new ArrayList();
 names.add("Murad Imanbayli");
-names.add("Ilkin Abudllayev");
+names.add("Ilkin Abdullayev");
 names.add("Ehtiram Abdullayev");
 
 var iter=names.iterator();
