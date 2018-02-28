@@ -11,7 +11,7 @@ var names=new ArrayList();
 names.add("Murad Imanbayli");
 
 console.log(names.size());
-names.add(0,"Ilkin Abudllayev");
+names.add(0,"Ilkin Abdullayev");
 
 console.log(names.isEmpty());
 
