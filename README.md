@@ -97,7 +97,7 @@ You can use for loop and Iterator
 ```js
 var names=new ArrayList();
 names.add("Murad Imanbayli");
-names.add("Ilkin Abudllayev");
+names.add("Ilkin Abdullayev");
 names.add("Ehtiram Abdullayev");
 
 var iter=names.iterator();
