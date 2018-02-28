@@ -86,7 +86,7 @@ console.log(countries.containsAll(countries2));
 console.log(countries.size());
 console.log(countries.isEmpty());
 
-//console.log(countries.remove("Turkey"));
+//console.log(countries.remove("Hungary2"));
 
 //console.log(countries.removeAll(countries2));
 console.log(countries.toArray().toString());
